@@ -1,0 +1,4 @@
+---
+
+# sslh configuration
+sslh_config: /etc/sslh/sslh.cfg

@@ -1,0 +1,6 @@
+---
+
+- name: Restart sslh service
+  service:
+    name: "{{ sslh_service }}"
+    state: restarted
