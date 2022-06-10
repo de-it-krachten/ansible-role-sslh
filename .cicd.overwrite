@@ -1,0 +1,16 @@
+---
+
+# Generic
+generic:
+  role: ansible-role-sslh
+  role_short: sslh
+  role_description: |
+    Manages sslh
+
+github:
+  fail_fast: false
+
+molecule:
+  converge:
+    vars:
+      sslh_fqdn: server.example.com

@@ -1,0 +1,17 @@
+---
+
+# Should sslh be activated
+sslh_active: true
+
+# native SSLH port
+sslh_port: 443
+
+# Port to forward ssh traffic to
+sslh_ssh_port: 22
+
+# list of packages to install
+sslh_packages:
+  - sslh
+
+# service name
+sslh_service: sslh
