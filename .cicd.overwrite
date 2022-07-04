@@ -7,8 +7,13 @@ generic:
   role_description: |
     Manages sslh
 
-github:
-  fail_fast: false
+platforms:
+  rhel9:
+    ci: false
+    supported: false
+  almalinux9:
+    ci: false
+    supported: false
 
 molecule:
   converge:
