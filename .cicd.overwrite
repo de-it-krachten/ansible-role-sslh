@@ -7,9 +7,6 @@ generic:
   role_description: |
     Manages sslh
 
-github:
-  fail_fast: false
-
 molecule:
   converge:
     vars:
