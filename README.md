@@ -14,6 +14,7 @@ Supported platforms
 - Red Hat Enterprise Linux 8<sup>1</sup>
 - CentOS 7
 - RockyLinux 8
+- RockyLinux 9
 - OracleLinux 8
 - AlmaLinux 8
 - Debian 10 (Buster)
@@ -66,6 +67,7 @@ sslh_config: /etc/sslh/sslh.cfg
 <pre><code>
 - name: sample playbook for role 'sslh'
   hosts: all
+  become: "{{ molecule['converge']['become'] | default('yes') }}"
   vars:
     sslh_fqdn: server.example.com
   tasks:
