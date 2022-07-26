@@ -66,6 +66,7 @@ sslh_config: /etc/sslh/sslh.cfg
 <pre><code>
 - name: sample playbook for role 'sslh'
   hosts: all
+  become: "{{ molecule['converge']['become'] | default('yes') }}"
   vars:
     sslh_fqdn: server.example.com
   tasks:
