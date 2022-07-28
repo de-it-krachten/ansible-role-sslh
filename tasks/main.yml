@@ -23,7 +23,8 @@
     name: "{{ sslh_packages }}"
     state: present
 
-- block:
+- name: OS specifc actions (RedHat)
+  block:
 
     - name: Start service
       service:
@@ -49,7 +50,8 @@
     - sslh_active|bool
 
 
-- block:
+- name: OS specifc actions (Debian)
+  block:
 
     - name: Edit the configuration file
       replace:
