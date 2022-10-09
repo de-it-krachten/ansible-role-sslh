@@ -6,6 +6,15 @@
 Manages sslh
 
 
+
+## Dependencies
+
+#### Roles
+None
+
+#### Collections
+- community.general
+
 ## Platforms
 
 Supported platforms
@@ -47,6 +56,7 @@ sslh_packages:
 sslh_service: sslh
 </pre></code>
 
+
 ### vars/family-RedHat.yml
 <pre><code>
 # sslh configuration
@@ -71,6 +81,6 @@ sslh_config: /etc/sslh/sslh.cfg
     sslh_fqdn: server.example.com
   tasks:
     - name: Include role 'sslh'
-      include_role:
+      ansible.builtin.include_role:
         name: sslh
 </pre></code>
