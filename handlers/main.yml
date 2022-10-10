@@ -1,6 +1,6 @@
 ---
 
 - name: Restart sslh service
-  service:
+  ansible.builtin.service:
     name: "{{ sslh_service }}"
     state: restarted
