@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.1.0...v1.2.0) (2022-10-12)
+
+
+### Features
+
+* Move to FQCN ([5bceeef](https://github.com/de-it-krachten/ansible-role-sslh/commit/5bceeef4d0df75a1caca537e7a4287e86604f281))
+* Update CI to latest standards ([b113214](https://github.com/de-it-krachten/ansible-role-sslh/commit/b11321450ad65c129f8e728e03764d57b00c68b6))
+
 # [1.1.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.0.0...v1.1.0) (2022-07-28)
 
 
