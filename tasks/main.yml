@@ -1,7 +1,7 @@
 ---
 
 - name: Load variables based on OS type
-  include_vars: "{{ lookup('first_found', params) }}"
+  ansible.builtin.include_vars: "{{ lookup('first_found', params) }}"
   vars:
     params:
       files:
@@ -14,47 +14,49 @@
         - "vars"
 
 - name: Assertions
-  assert:
+  ansible.builtin.assert:
     that:
       - sslh_fqdn is defined
 
 - name: Install packages
-  package:
+  ansible.builtin.package:
     name: "{{ sslh_packages }}"
     state: present
 
 - name: OS specifc actions (RedHat)
+  when:
+    - ansible_os_family == 'RedHat'
+    - sslh_active | bool
   block:
 
     - name: Start service
-      service:
+      ansible.builtin.service:
         name: "{{ sslh_service }}"
         enabled: yes
 
     - name: Edit the configuration file (listen address)
-      replace:
+      ansible.builtin.replace:
         path: "{{ sslh_config }}"
         regexp: '{ host:.*'
         replace: '{ host: "{{ sslh_fqdn }}"; port: "{{ sslh_port }}"; }'
       notify: Restart sslh service
 
     - name: Edit the configuration file (ssh port)
-      replace:
+      ansible.builtin.replace:
         path: "{{ sslh_config }}"
         regexp: '{ name: "ssh".*'
         replace: '{ name: "ssh"; service: "ssh"; host: "localhost"; port: "{{ sslh_ssh_port }}"; probe: "builtin"; },'
       notify: Restart sslh service
 
-  when:
-    - ansible_os_family == 'RedHat'
-    - sslh_active|bool
-
 
 - name: OS specifc actions (Debian)
+  when:
+    - ansible_os_family == 'Debian'
+    - sslh_active | bool
   block:
 
     - name: Edit the configuration file
-      replace:
+      ansible.builtin.replace:
         path: /etc/default/sslh
         regexp: "^{{ item.key }}=.*"
         replace: "{{ item.key }}={{ item.value }}"
@@ -65,13 +67,10 @@
           value: '"--user sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:{{ sslh_ssh_port }} --ssl 127.0.0.1:443 --pidfile /var/run/sslh/sslh.pid"'
       notify: Restart sslh service
 
-  when:
-    - ansible_os_family == 'Debian'
-    - sslh_active|bool
 
 - name: Stop service
-  service:
+  ansible.builtin.service:
     name: "{{ sslh_service }}"
     state: stopped
     enabled: no
-  when: not sslh_active|bool
+  when: not sslh_active | bool
