@@ -30,8 +30,8 @@ Supported platforms
 - Ubuntu 18.04 LTS
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
-- Fedora 35
 - Fedora 36
+- Fedora 37
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -76,7 +76,7 @@ sslh_config: /etc/sslh/sslh.cfg
 <pre><code>
 - name: sample playbook for role 'sslh'
   hosts: all
-  become: "{{ molecule['converge']['become'] | default('yes') }}"
+  become: "yes"
   vars:
     sslh_fqdn: server.example.com
   tasks:
