@@ -57,16 +57,16 @@ sslh_service: sslh
 </pre></code>
 
 
-### vars/family-RedHat.yml
-<pre><code>
-# sslh configuration
-sslh_config: /etc/sslh.cfg
-</pre></code>
-
 ### vars/family-Debian.yml
 <pre><code>
 # sslh configuration
 sslh_config: /etc/sslh/sslh.cfg
+</pre></code>
+
+### vars/family-RedHat.yml
+<pre><code>
+# sslh configuration
+sslh_config: /etc/sslh.cfg
 </pre></code>
 
 
