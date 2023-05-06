@@ -17,6 +17,9 @@ platforms:
   almalinux9:
     ci: false
     supported: false
+  oraclelinux9:
+    ci: false
+    supported: false
 
 molecule:
   converge:
