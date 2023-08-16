@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.2.0...v1.3.0) (2023-08-16)
+
+
+### Features
+
+* Update supported platforms & CI ([938d632](https://github.com/de-it-krachten/ansible-role-sslh/commit/938d63206be51fcec0cdf965dd38af181e926482))
+
 # [1.2.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.1.0...v1.2.0) (2022-10-12)
 
 
