@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.3.0...v1.3.1) (2023-09-22)
+
+
+### Bug Fixes
+
+* Fix loop label to string ([cce6fbb](https://github.com/de-it-krachten/ansible-role-sslh/commit/cce6fbb3a8d4de279a6d7537011dcf44ff246e21))
+
 # [1.3.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.2.0...v1.3.0) (2023-08-16)
 
 
