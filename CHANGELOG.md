@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.3.1...v1.4.0) (2024-06-03)
+
+
+### Features
+
+* Add support for Ubuntu 24.04 LTS + Fedora 40 ([7ef472e](https://github.com/de-it-krachten/ansible-role-sslh/commit/7ef472e7e479bd02312ef47684dc8040ff7fb90f))
+
 ## [1.3.1](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.3.0...v1.3.1) (2023-09-22)
 
 
