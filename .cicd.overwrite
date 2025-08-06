@@ -11,13 +11,25 @@ platforms:
   rhel9:
     ci: false
     supported: false
+  rhel10:
+    ci: false
+    supported: false
   rockylinux9:
+    ci: false
+    supported: false
+  rockylinux10:
     ci: false
     supported: false
   almalinux9:
     ci: false
     supported: false
+  almalinux10:
+    ci: false
+    supported: false
   oraclelinux9:
+    ci: false
+    supported: false
+  oraclelinux10:
     ci: false
     supported: false
 
