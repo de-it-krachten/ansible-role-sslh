@@ -7,31 +7,47 @@ generic:
   role_description: |
     Manages sslh
 
+# Supported platforms
 platforms:
   rhel9:
-    ci: false
     supported: false
+    ci: false
   rhel10:
-    ci: false
     supported: false
+    ci: false
   rockylinux9:
-    ci: false
     supported: false
+    ci: false
   rockylinux10:
-    ci: false
     supported: false
-  almalinux9:
     ci: false
-    supported: false
-  almalinux10:
-    ci: false
-    supported: false
   oraclelinux9:
-    ci: false
     supported: false
+    ci: false
   oraclelinux10:
-    ci: false
     supported: false
+    ci: false
+  almalinux9:
+    supported: false
+    ci: false
+  almalinux10:
+    supported: false
+    ci: false
+  sles15:
+    supported: true
+    ci: false
+  sles16:
+    supported: true
+    ci: false
+  opensuse15:
+    supported: true
+    ci: true
+  opensuse16:
+    supported: true
+    ci: true
+  ubuntu2004:
+    supported: true
+    ci: true
 
 molecule:
   converge:
