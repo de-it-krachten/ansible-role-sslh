@@ -1,3 +1,13 @@
+# [1.7.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.6.0...v1.7.0) (2026-03-15)
+
+
+### Features
+
+* Added support for Fedora 43 ([02655be](https://github.com/de-it-krachten/ansible-role-sslh/commit/02655be8bdd688e847c97e1bb20f1b1c1c85c0a8))
+* Drop support for Fedora 41 ([0ea26c0](https://github.com/de-it-krachten/ansible-role-sslh/commit/0ea26c095dfff91de3eb49571ec0f5ad785b4a5d))
+* Drop support for openSUSE Leap 15 ([6d662df](https://github.com/de-it-krachten/ansible-role-sslh/commit/6d662dff0633443713930533f1731964002b145f))
+* Drop support for SUSE Linux Enterprise 15 ([a29478c](https://github.com/de-it-krachten/ansible-role-sslh/commit/a29478c337e7f755f637e1ce17fec6e036d7c499))
+
 # [1.6.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.5.0...v1.6.0) (2025-08-07)
 
 
