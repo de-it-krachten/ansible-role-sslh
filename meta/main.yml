@@ -12,9 +12,6 @@ galaxy_info:
     - name: EL
       versions:
         - '8'
-    - name: opensuse
-      versions:
-        - all
     - name: Debian
       versions:
         - bullseye
@@ -26,5 +23,6 @@ galaxy_info:
         - jammy
     - name: Fedora
       versions:
-        - all
+        - '42'
+        - '43'
 dependencies: []

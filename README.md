@@ -23,19 +23,18 @@ Supported platforms
 - RockyLinux 8
 - OracleLinux 8
 - AlmaLinux 8
-- SUSE Linux Enterprise 15<sup>1</sup>
-- openSUSE Leap 15
 - Debian 11 (Bullseye)
 - Debian 12 (Bookworm)
 - Debian 13 (Trixie)
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
 - Ubuntu 24.04 LTS
-- Fedora 41
 - Fedora 42
+- Fedora 43
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
+
 
 ## Role Variables
 ### defaults/main.yml
@@ -85,6 +84,7 @@ sslh_config: /etc/sslh.cfg
   hosts: all
   become: 'yes'
   vars:
+    molecule_driver: '{{ lookup(''env'', ''MOLECULE_DRIVER_NAME'') }}'
     sslh_fqdn: server.example.com
   tasks:
     - name: Include role 'sslh'
