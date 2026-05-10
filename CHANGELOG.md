@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.7.0...v1.8.0) (2026-05-10)
+
+
+### Bug Fixes
+
+* Fix '--ssl' => '--tls' ([762c37f](https://github.com/de-it-krachten/ansible-role-sslh/commit/762c37f496dcaa7f90a48ee8c281dde2fc927248))
+
+
+### Features
+
+* Added support for Ubuntu 26.04 LTS ([cbaafe4](https://github.com/de-it-krachten/ansible-role-sslh/commit/cbaafe449b80ef7d40dc72d5e9624d8ce0eb31fa))
+
 # [1.7.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.6.0...v1.7.0) (2026-03-15)
 
 
