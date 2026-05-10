@@ -45,6 +45,15 @@
     - sslh_active | bool
   block:
 
+    - name: Create pid directory
+      ansible.builtin.file:
+        path: /var/run/sslh
+        state: directory
+        owner: sslh
+        group: sslh
+        mode: "0755"
+      notify: Restart sslh service
+
     - name: Edit the configuration file
       ansible.builtin.replace:
         path: /etc/default/sslh
@@ -54,9 +63,8 @@
         - key: RUN
           value: 'yes'
         - key: DAEMON_OPTS
-          value: '"--user sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:{{ sslh_ssh_port }} --ssl 127.0.0.1:443 --pidfile /var/run/sslh/sslh.pid"'
+          value: '"--user sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:{{ sslh_ssh_port }} --tls 127.0.0.1:443 --pidfile /var/run/sslh/sslh.pid"'
       notify: Restart sslh service
-
 
 - name: Stop service
   ansible.builtin.service:
