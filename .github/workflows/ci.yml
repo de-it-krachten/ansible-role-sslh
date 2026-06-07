@@ -27,19 +27,40 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "ansible_2.17"
-            # ansible: "ansible>10,<11"
-            ansible: "ansible-core>2.17,<2.18"
+          - name: "ansible_2.16"
+            # ansible: "ansible>9,<10"
+            ansible: "ansible-core>2.16,<2.17"
             ansible_lint: "ansible-lint"
-            python: "3.13"
-            venv: "ansiblecore217"
+            python: "3.12"
+            venv: "ansiblecore216"
 
           - name: "ansible_2.18"
             # ansible: "ansible>11,<12"
             ansible: "ansible-core>2.18,<2.19"
             ansible_lint: "ansible-lint"
-            python: "3.13"
+            python: "3.12"
             venv: "ansiblecore218"
+
+          - name: "ansible_2.19"
+            # ansible: "ansible>12,<13"
+            ansible: "ansible-core>2.19,<2.20"
+            ansible_lint: "ansible-lint"
+            python: "3.12"
+            venv: "ansiblecore219"
+
+          - name: "ansible_2.20"
+            # ansible: "ansible>13,<14"
+            ansible: "ansible-core>2.20,<2.21"
+            ansible_lint: "ansible-lint"
+            python: "3.12"
+            venv: "ansiblecore220"
+
+          - name: "ansible_2.21"
+            # ansible: "ansible>14,<15"
+            ansible: "ansible-core>2.21,<2.22"
+            ansible_lint: "ansible-lint"
+            python: "3.12"
+            venv: "ansiblecore221"
 
 
     steps:
@@ -196,7 +217,7 @@ jobs:
             playbook: converge.yml
             venv: "ansiblecore216"
             ansible: "ansible-core>2.16,<2.17"
-            ansible_lint: "ansible-lint>6,<7"
+            ansible_lint: "ansible-lint>25,<25.11"
             python: "3.12"
             hetznercloud: True
 
@@ -206,7 +227,7 @@ jobs:
             playbook: converge.yml
             venv: "ansiblecore216"
             ansible: "ansible-core>2.16,<2.17"
-            ansible_lint: "ansible-lint>6,<7"
+            ansible_lint: "ansible-lint>25,<25.11"
             python: "3.12"
             hetznercloud: False
 
@@ -216,7 +237,7 @@ jobs:
             playbook: converge.yml
             venv: "ansiblecore216"
             ansible: "ansible-core>2.16,<2.17"
-            ansible_lint: "ansible-lint>6,<7"
+            ansible_lint: "ansible-lint>25,<25.11"
             python: "3.12"
             hetznercloud: False
 
@@ -224,8 +245,8 @@ jobs:
             runs_on: ubuntu-22.04
             distro: debian11
             playbook: converge.yml
-            venv: "ansiblecore218"
-            ansible: "ansible-core>2.18,<2.19"
+            venv: "ansiblecore220"
+            ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
             hetznercloud: True
@@ -234,8 +255,8 @@ jobs:
             runs_on: ubuntu-22.04
             distro: debian12
             playbook: converge.yml
-            venv: "ansiblecore218"
-            ansible: "ansible-core>2.18,<2.19"
+            venv: "ansiblecore220"
+            ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
             hetznercloud: True
@@ -244,8 +265,8 @@ jobs:
             runs_on: ubuntu-22.04
             distro: debian13
             playbook: converge.yml
-            venv: "ansiblecore218"
-            ansible: "ansible-core>2.18,<2.19"
+            venv: "ansiblecore220"
+            ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
             hetznercloud: True
@@ -254,18 +275,18 @@ jobs:
             runs_on: ubuntu-22.04
             distro: ubuntu2004
             playbook: converge.yml
-            venv: "ansiblecore218"
-            ansible: "ansible-core>2.18,<2.19"
+            venv: "ansiblecore219"
+            ansible: "ansible-core>2.19,<2.20"
             ansible_lint: "ansible-lint"
-            python: "3.13"
+            python: "3.12"
             hetznercloud: True
 
           - name: ubuntu2204
             runs_on: ubuntu-22.04
             distro: ubuntu2204
             playbook: converge.yml
-            venv: "ansiblecore218"
-            ansible: "ansible-core>2.18,<2.19"
+            venv: "ansiblecore220"
+            ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
             hetznercloud: True
@@ -274,8 +295,8 @@ jobs:
             runs_on: ubuntu-22.04
             distro: ubuntu2404
             playbook: converge.yml
-            venv: "ansiblecore218"
-            ansible: "ansible-core>2.18,<2.19"
+            venv: "ansiblecore220"
+            ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
             hetznercloud: True
@@ -284,18 +305,8 @@ jobs:
             runs_on: ubuntu-22.04
             distro: ubuntu2604
             playbook: converge.yml
-            venv: "ansiblecore218"
-            ansible: "ansible-core>2.18,<2.19"
-            ansible_lint: "ansible-lint"
-            python: "3.13"
-            hetznercloud: True
-
-          - name: fedora42
-            runs_on: ubuntu-22.04
-            distro: fedora42
-            playbook: converge.yml
-            venv: "ansiblecore218"
-            ansible: "ansible-core>2.18,<2.19"
+            venv: "ansiblecore220"
+            ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
             hetznercloud: True
@@ -304,8 +315,8 @@ jobs:
             runs_on: ubuntu-22.04
             distro: fedora43
             playbook: converge.yml
-            venv: "ansiblecore218"
-            ansible: "ansible-core>2.18,<2.19"
+            venv: "ansiblecore220"
+            ansible: "ansible-core>2.20,<2.21"
             ansible_lint: "ansible-lint"
             python: "3.13"
             hetznercloud: True
