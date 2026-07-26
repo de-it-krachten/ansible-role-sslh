@@ -15,7 +15,7 @@
 
 - name: OS specifc actions (RedHat)
   when:
-    - ansible_os_family == 'RedHat'
+    - ansible_facts.os_family == 'RedHat'
     - sslh_active | bool
   block:
 
@@ -41,9 +41,15 @@
 
 - name: OS specifc actions (Debian)
   when:
-    - ansible_os_family == 'Debian'
+    - ansible_facts.os_family == 'Debian'
     - sslh_active | bool
   block:
+
+    - name: Get SSHL version
+      ansible.builtin.command:
+        cmd: sslh -V
+      changed_when: false
+      register: __sslh_version
 
     - name: Create pid directory
       ansible.builtin.file:
@@ -58,12 +64,20 @@
       ansible.builtin.replace:
         path: /etc/default/sslh
         regexp: "^{{ item.key }}=.*"
-        replace: "{{ item.key }}={{ item.value }}"
+        replace: "{{ item.key }}=\"{{ item.value | regex_replace('\\s*$') }}\""
       loop:
         - key: RUN
           value: 'yes'
         - key: DAEMON_OPTS
-          value: '"--user sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:{{ sslh_ssh_port }} --tls 127.0.0.1:443 --pidfile /var/run/sslh/sslh.pid"'
+          value: >-
+            --user sslh
+            --listen 0.0.0.0:443
+            --ssh 127.0.0.1:{{ sslh_ssh_port }}
+            --tls 127.0.0.1:443
+            --pidfile /var/run/sslh/sslh.pid
+            {% if __sslh_version.stdout.split(' ')[1] is search('^2') %}
+            --verbose-connections 0
+            {% endif %}
       notify: Restart sslh service
 
 - name: Stop service
