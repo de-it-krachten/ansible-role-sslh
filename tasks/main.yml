@@ -47,7 +47,7 @@
 
     - name: Get SSHL version
       ansible.builtin.command:
-        cmd: sslh --version
+        cmd: sslh -V
       changed_when: false
       register: __sslh_version
 
