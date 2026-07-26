@@ -1,3 +1,19 @@
+# [1.9.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.8.0...v1.9.0) (2026-07-26)
+
+
+### Bug Fixes
+
+* Fix version check ([9ce940b](https://github.com/de-it-krachten/ansible-role-sslh/commit/9ce940bc9ea9d936f0c9107dbf6d319435177119))
+* Reduce verbosity on v2 and higher ([b35974a](https://github.com/de-it-krachten/ansible-role-sslh/commit/b35974a1dc6b01112e2863dd0095f2c368df59a9))
+* Standarize vars.yml ([c89aba6](https://github.com/de-it-krachten/ansible-role-sslh/commit/c89aba69d9abad4527f61da7a8a4e960224c493a))
+
+
+### Features
+
+* Add support for ansible-core 2.20+ ([ab78ca6](https://github.com/de-it-krachten/ansible-role-sslh/commit/ab78ca6f90f861ae4be2bc0c1eb8c4980eb4adc3))
+* Added support for Fedora 44 ([7af6bc0](https://github.com/de-it-krachten/ansible-role-sslh/commit/7af6bc07d5d15bd8f0c244b5b3afca0fca7470ca))
+* Drop support for Fedora 42 ([4d42f00](https://github.com/de-it-krachten/ansible-role-sslh/commit/4d42f003e32f6de54d120e69ba7526fa5f7a1a7b))
+
 # [1.8.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.7.0...v1.8.0) (2026-05-10)
 
 
