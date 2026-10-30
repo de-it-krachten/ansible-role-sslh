@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.9.0...v1.10.0) (2026-10-30)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([8b4b510](https://github.com/de-it-krachten/ansible-role-sslh/commit/8b4b510666120a21eab8b050e8d3796f8ca4814c))
+
 # [1.9.0](https://github.com/de-it-krachten/ansible-role-sslh/compare/v1.8.0...v1.9.0) (2026-07-26)
 
 
